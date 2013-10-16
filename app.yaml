@@ -1,0 +1,23 @@
+application: {your application id}
+version: 1
+runtime: php
+api_version: 1
+
+env_variables:
+#  FUEL_ENV: 'development'
+  FUEL_ENV: 'production'
+
+handlers:
+
+# assets dir
+- url: /assets
+  static_dir: public/assets
+
+# favicon file
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+# php files
+- url: /.*
+  script: public/index.php
